@@ -84,7 +84,16 @@ const QuickTipPage: React.FC<PageProps> = ({ onNavigate }) => {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-bold text-slate-700 mb-2">Tip Percentage</label>
+                        <div className="flex items-center gap-2 mb-2">
+                            <label className="block text-sm font-bold text-slate-700">Tip Percentage</label>
+                            <div className="group relative">
+                                <HelpCircle className="w-4 h-4 text-slate-400 cursor-help transition-colors hover:text-slate-600" />
+                                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 p-2.5 bg-slate-800 text-white text-xs leading-relaxed rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 text-center font-normal">
+                                    Choose a standard rate or enter a custom percentage based on service quality.
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="grid grid-cols-4 gap-2 mb-3">
                             {[15, 18, 20, 25].map((p) => (
                                 <button
@@ -113,7 +122,16 @@ const QuickTipPage: React.FC<PageProps> = ({ onNavigate }) => {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-bold text-slate-700 mb-2">Split Between</label>
+                        <div className="flex items-center gap-2 mb-2">
+                            <label className="block text-sm font-bold text-slate-700">Split Between</label>
+                            <div className="group relative">
+                                <HelpCircle className="w-4 h-4 text-slate-400 cursor-help transition-colors hover:text-slate-600" />
+                                <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-52 p-2.5 bg-slate-800 text-white text-xs leading-relaxed rounded-lg shadow-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-20 text-center font-normal">
+                                    Enter the number of people sharing the bill to calculate how much each person owes.
+                                    <div className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-slate-800"></div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="relative flex items-center">
                             <button 
                                 onClick={() => setPeople(Math.max(1, people - 1))}
